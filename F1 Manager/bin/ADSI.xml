@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ADSI</name>
+    </assembly>
+    <members>
+        <member name="T:ADSI.Enum.ADS_NAME_INITTYPE">
+            <summary>
+            Specifies the types of initialization to perform on a <see cref="T:ADSI.Utility.NameTranslate">NameTranslate</see> object
+            </summary>
+        </member>
+        <member name="F:ADSI.Enum.ADS_NAME_INITTYPE.ADS_NAME_INITTYPE_DOMAIN">
+            <summary>Initializes a NameTranslate object by setting the domain that the object binds to.</summary>
+        </member>
+        <member name="F:ADSI.Enum.ADS_NAME_INITTYPE.ADS_NAME_INITTYPE_SERVER">
+            <summary>Initializes a NameTranslate object by setting the server that the object binds to.</summary>
+        </member>
+        <member name="F:ADSI.Enum.ADS_NAME_INITTYPE.ADS_NAME_INITTYPE_GC">
+            <summary>Initializes a NameTranslate object by locating the global catalog that the object binds to.</summary>
+        </member>
+        <member name="T:ADSI.Enum.ADS_NAME_TYPE">
+            <summary>
+            Specifies the formats used for representing account names.
+            </summary>
+        </member>
+        <member name="F:ADSI.Enum.ADS_NAME_TYPE.ADS_NAME_TYPE_1779">
+            <summary>Name format as specified in RFC 1779. For example, "CN=Jeff Smith,CN=users,DC=Fabrikam,DC=com".</summary>
+        </member>
+        <member name="F:ADSI.Enum.ADS_NAME_TYPE.ADS_NAME_TYPE_CANONICAL">
+            <summary>Canonical name format. For example, "Fabrikam.com/Users/Jeff Smith".</summary>
+        </member>
+        <member name="F:ADSI.Enum.ADS_NAME_TYPE.ADS_NAME_TYPE_NT4">
+            <summary>Account name format used in Windows NT 4.0. For example, "Fabrikam\JeffSmith".</summary>
+        </member>
+        <member name="F:ADSI.Enum.ADS_NAME_TYPE.ADS_NAME_TYPE_DISPLAY">
+            <summary>Display name format. For example, "Jeff Smith".</summary>
+        </member>
+        <member name="F:ADSI.Enum.ADS_NAME_TYPE.ADS_NAME_TYPE_DOMAIN_SIMPLE">
+            <summary>Simple domain name format. For example, "JeffSmith@Fabrikam.com".</summary>
+        </member>
+        <member name="F:ADSI.Enum.ADS_NAME_TYPE.ADS_NAME_TYPE_ENTERPRISE_SIMPLE">
+            <summary>Simple enterprise name format. For example, "JeffSmith@Fabrikam.com".</summary>
+        </member>
+        <member name="F:ADSI.Enum.ADS_NAME_TYPE.ADS_NAME_TYPE_GUID">
+            <summary>Global Unique Identifier format. For example, "{95ee9fff-3436-11d1-b2b0-d15ae3ac8436}".</summary>
+        </member>
+        <member name="F:ADSI.Enum.ADS_NAME_TYPE.ADS_NAME_TYPE_UNKNOWN">
+            <summary>Unknown name type. The system will estimate the format. This element is a meaningful option only for source identifiers.</summary>
+        </member>
+        <member name="F:ADSI.Enum.ADS_NAME_TYPE.ADS_NAME_TYPE_USER_PRINCIPAL_NAME">
+            <summary>User principal name format. For example, "JeffSmith@Fabrikam.com".</summary>
+        </member>
+        <member name="F:ADSI.Enum.ADS_NAME_TYPE.ADS_NAME_TYPE_CANONICAL_EX">
+            <summary>Extended canonical name format. For example, "Fabrikam.com/Users Jeff Smith".</summary>
+        </member>
+        <member name="F:ADSI.Enum.ADS_NAME_TYPE.ADS_NAME_TYPE_SERVICE_PRINCIPAL_NAME">
+            <summary>Service principal name format. For example, "www/www.fabrikam.com@fabrikam.com".</summary>
+        </member>
+        <member name="F:ADSI.Enum.ADS_NAME_TYPE.ADS_NAME_TYPE_SID_OR_SID_HISTORY_NAME">
+            <summary>A SID string, as defined in the Security Descriptor Definition Language (SDDL), for either the SID of the current object or one from the object SID history. For example, "O:AOG:DAD:(A;;RPWPCCDCLCSWRCWDWOGA;;;S-1-0-0)".</summary>
+        </member>
+        <member name="T:ADSI.Utility.NameTranslate">
+            <summary>
+            Translates distinguished names (DNs) among various formats as defined in the <see cref="T:ADSI.Enum.ADS_NAME_TYPE">ADS_NAME_TYPE_ENUM</see> enumeration
+            </summary>
+            <remarks>Name translations are performed on the directory server.</remarks>
+        </member>
+        <member name="M:ADSI.Utility.NameTranslate.#ctor">
+            <summary>
+            Provides an interface to translate between different <see cref="T:ADSI.Enum.ADS_NAME_TYPE">ADS_NAME_TYPE_ENUM</see> formats.
+            </summary>
+            <remarks>Default constructor binds to the global catalog.</remarks>
+        </member>
+        <member name="M:ADSI.Utility.NameTranslate.#ctor(ADSI.Enum.ADS_NAME_INITTYPE,System.String)">
+            <summary>
+            Provides an interface to translate between different <see cref="T:ADSI.Enum.ADS_NAME_TYPE">ADS_NAME_TYPE_ENUM</see> formats.
+            </summary>
+            <param name="InitType">Type of initialization to be performed.</param>
+            <param name="Path">The name of the server or domain, depending on the value of lnInitType. When ADS_NAME_INITTYPE_GC is issued, this parameter is ignored. The global catalog server of the domain of the current computer will perform the name translate operations. This method will fail if the computer is not part of a domain as no global catalog will be found in this scenario.</param>
+        </member>
+        <member name="M:ADSI.Utility.NameTranslate.#ctor(ADSI.Enum.ADS_NAME_INITTYPE,System.String,System.String,System.String,System.String)">
+            <summary>
+            Provides an interface to translate between different <see cref="T:ADSI.Enum.ADS_NAME_TYPE">ADS_NAME_TYPE_ENUM</see> formats.
+            </summary>
+            <param name="InitType">Type of initialization to be performed.</param>
+            <param name="Path">The name of the server or domain, depending on the value of lnInitType. When ADS_NAME_INITTYPE_GC is issued, this parameter is ignored. The global catalog server of the domain of the current computer will perform the name translate operations. This method will fail if the computer is not part of a domain as no global catalog will be found in this scenario.</param>
+            <param name="UserID">User name.</param>
+            <param name="Domain">User domain name.</param>
+            <param name="Password">User password.</param>
+        </member>
+        <member name="M:ADSI.Utility.NameTranslate.Translate(System.String,ADSI.Enum.ADS_NAME_TYPE)">
+            <summary>
+            Retrieves the name of a directory object in the specified format.
+            </summary>
+            <remarks>Uses ADS_NAME_TYPE_UNKNOWN as a source format causing ADSI to estimate the provided format.</remarks>
+            <param name="Identifier"></param>
+            <param name="ReturnType"></param>
+            <returns>The translated account identifier in the desired format.</returns>
+        </member>
+        <member name="M:ADSI.Utility.NameTranslate.Translate(System.String,ADSI.Enum.ADS_NAME_TYPE,ADSI.Enum.ADS_NAME_TYPE)">
+            <summary>
+            Retrieves the name of a directory object in the specified format.
+            </summary>
+            <param name="Identifier">Distinguished name for lookup.</param>
+            <param name="SourceType">Format for provided account identifier.</param>
+            <param name="ReturnType">Desired return format for account identifier.</param>
+            <returns>The translated account identifier in the desired format.</returns>
+        </member>
+    </members>
+</doc>
