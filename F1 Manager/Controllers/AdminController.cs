@@ -20,20 +20,20 @@ namespace F1_Manager.Controllers
             List<string> AllUsers = dc.GetAllUsers();
 
             ResetPasswordViewModel RPVM = new ResetPasswordViewModel();
+            string a = "Corrie";
+            AllUsers.Add(a);
 
             if (AllUsers.Any())
             {
                 RPVM.UserList = AllUsers;
             }
-
-            string a = "Corrie";
-            AllUsers.Add(a);
+           
 
             return View(RPVM);
         }
 
         [HttpPost]
-        public ActionResult ChangePassword(ResetPasswordViewModel Data)
+        public ActionResult AdminPage(ResetPasswordViewModel Data)
         {
             TempData["Message"] = "Something went wrong";
             //Get al users for change of user password

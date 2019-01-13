@@ -121,15 +121,19 @@ namespace F1_Manager
 
 
             //string constring = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Vincenzo\Documents\Fontys\Trashure\KillerApp\App_Data\Trashure.mdf; Integrated Security = True; Connect Timeout = 30"; ;
-            using (MySqlCommand cmd = new MySqlCommand("ResetPassword", connection))
+            using (MySqlCommand cmd = new MySqlCommand("ChangePassword", connection))
             {
                 
                 try
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Uname", Username);
-                    cmd.Parameters.AddWithValue("@Pword", HashedPassword);
-                    result = cmd.ExecuteNonQuery();
+                    cmd.Parameters.AddWithValue("@Usrnm", Username);
+                    cmd.Parameters.AddWithValue("@Psswrd", HashedPassword);
+
+                    OpenConnectionIfClosed();
+
+                    cmd.ExecuteNonQuery();
+                    result = 1;
                 }
                 catch (Exception ex)
                 {
@@ -158,6 +162,8 @@ namespace F1_Manager
                 //Nog Stored precedure aanmaken voor het ophalen van alle users
                 try
                 {
+                    OpenConnectionIfClosed();
+
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     MySqlDataReader Reader = cmd.ExecuteReader();
