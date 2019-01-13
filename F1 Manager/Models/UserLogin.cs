@@ -19,6 +19,8 @@ namespace F1_Manager.Models
         [Display(Name = "Remember Me")]
         public bool RememberMe { get; set; }
 
+        public int IsAdmin { get; set; }
+
         public string LoggedinUser;
     }
 }

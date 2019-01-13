@@ -27,6 +27,14 @@
                     <li>@Html.ActionLink("LeaderBoard", "UserRanking", "Leaderboard")</li>
                     @if (Request.IsAuthenticated)
                     {
+                        if (Session["UserAdmin"] != null)
+                        {
+                            if (Session["UserAdmin"].ToString() == "1")
+                            {
+                                <li>@Html.ActionLink("Admin Page", "AdminPage", "Admin")</li>
+                            }
+                        }
+
                         using (Html.BeginForm("Logout", "User", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
                         {
                             @Html.AntiForgeryToken()

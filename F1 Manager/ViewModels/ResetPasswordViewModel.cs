@@ -17,7 +17,7 @@ namespace F1_Manager.ViewModels
         [Required(AllowEmptyStrings = false, ErrorMessage = "Password cant be empty")]
         public string Password { get; set; }
 
-        public List<User> UserList { get; set; }
+        public List<string> UserList { get; set; }
 
     }
 }

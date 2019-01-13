@@ -75,11 +75,12 @@ namespace F1_Manager
             return result;
         }
 
-        public int CheckLogin(string Username, string Password)
+        public UserLogin CheckLogin(string Username, string Password, ref int Result)
         {
-            int result = 0;
+            UserLogin LoggedInUser = new UserLogin();
             using (MySqlCommand cmd = new MySqlCommand("LoginCheck", connection))
             {
+                
                 try
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -87,9 +88,18 @@ namespace F1_Manager
                     cmd.Parameters.AddWithValue("Pword", Password);
 
                     OpenConnectionIfClosed();
-                    cmd.ExecuteNonQuery();
-                    result = 1;
-                    return result;
+                    MySqlDataReader Reader = cmd.ExecuteReader();
+
+                    //UserLogin LoggedInUser = new UserLogin();
+
+                    while (Reader.Read())
+                    {
+                        LoggedInUser.Username = (string)Reader["Username"];
+                        LoggedInUser.IsAdmin = (int)Reader["IsAdmin"];
+                    }
+                    Result = 1;
+
+                    return LoggedInUser;
                 }
                 catch (Exception ex)
                 {
@@ -101,7 +111,7 @@ namespace F1_Manager
                 }
             }
 
-            return result;
+            return LoggedInUser;
         }
 
         public int ResetPassword(string Username, string HashedPassword)
@@ -136,11 +146,11 @@ namespace F1_Manager
             return result;
         }
 
-        public List<User> GetAllUsers()
+        public List<string> GetAllUsers()
         {
 
             int result;
-            List<User> AllUsers = new List<User>();
+            List<string> AllUsers = new List<string>();
 
             //string constring = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Vincenzo\Documents\Fontys\Trashure\KillerApp\App_Data\Trashure.mdf; Integrated Security = True; Connect Timeout = 30"; ;
             using (MySqlCommand cmd = new MySqlCommand("GetAllUsers", connection))
@@ -153,10 +163,8 @@ namespace F1_Manager
                     MySqlDataReader Reader = cmd.ExecuteReader();
 
                     while (Reader.Read())
-                    {
-                        User user = new User();
-                        user.Username = (string)Reader["Username"];
-                        AllUsers.Add(user);
+                    {                       
+                        AllUsers.Add((string)Reader["Username"]);
                     }
                 }
                 catch (Exception ex)

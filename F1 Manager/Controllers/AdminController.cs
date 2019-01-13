@@ -17,7 +17,7 @@ namespace F1_Manager.Controllers
         public ActionResult AdminPage()
         {
             //Get al users for change of user password
-            List<User> AllUsers = dc.GetAllUsers();
+            List<string> AllUsers = dc.GetAllUsers();
 
             ResetPasswordViewModel RPVM = new ResetPasswordViewModel();
 
@@ -25,6 +25,9 @@ namespace F1_Manager.Controllers
             {
                 RPVM.UserList = AllUsers;
             }
+
+            string a = "Corrie";
+            AllUsers.Add(a);
 
             return View(RPVM);
         }

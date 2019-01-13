@@ -85,8 +85,13 @@ namespace F1_Manager.Controllers
 
             if (ModelState.IsValid)
             {
-                int Result = dc.CheckLogin(login.Username, Crypto.Hash(login.Password));
+                int Result = 0;
 
+                UserLogin LoggedInUser = dc.CheckLogin(login.Username, Crypto.Hash(login.Password), ref Result);
+                if (string.IsNullOrEmpty(LoggedInUser.Username))
+                {
+                    Result = 0;
+                }
                 /*
                 string uNameQuery =  $"SELECT Username FROM user WHERE Username= '{login.Username}'";
                 string pWordQuery =  $"SELECT Password FROM user WHERE Password= '{Crypto.Hash(login.Password)}'";
@@ -97,15 +102,16 @@ namespace F1_Manager.Controllers
                 if (Result == 1)
                 {
                     int timeout = login.RememberMe ? 525600 : 20; // 525600 min = 1 year
-                    var ticket = new FormsAuthenticationTicket(login.Username, login.RememberMe, timeout);
+                    var ticket = new FormsAuthenticationTicket(LoggedInUser.Username, login.RememberMe, timeout);
                     string encrypted = FormsAuthentication.Encrypt(ticket);
                     var cookie = new HttpCookie(FormsAuthentication.FormsCookieName, encrypted);
                     cookie.Expires = DateTime.Now.AddMinutes(timeout);
                     cookie.HttpOnly = true;
                     Response.Cookies.Add(cookie);
-                    
+                    login = null;
                     Session["UserLogin"] = new UserLogin()
-                    { Username = login.Username};
+                    { Username = LoggedInUser.Username };
+                    Session["UserAdmin"] = LoggedInUser.IsAdmin.ToString();
 
                     if (Url.IsLocalUrl(ReturnUrl))
                     {
@@ -113,7 +119,7 @@ namespace F1_Manager.Controllers
                     }
                     else
                     {
-                        return RedirectToAction("Index", "Home", new { id = login.Username });
+                        return RedirectToAction("Index", "Home", new { id = LoggedInUser.Username });
                     }
                 }
                 else
