@@ -12,8 +12,7 @@ namespace F1_Manager.Controllers
 {
     public class DriverController : ApiController
     {
-        
-        public async Task<List<Competitor>> Get()
+        public async Task<List<Competitor>> DriverRanking()
         {
             List<Competitor> DriverList = new List<Competitor>();
             //F1ViewModel model = FormulaOne
@@ -33,11 +32,11 @@ namespace F1_Manager.Controllers
 
                 foreach (var competitor in formulaOne.Stage.Competitors)
                 {
-                    DriverList.Add(new Competitor { Name = competitor.Name, CountryCode = competitor.CountryCode, Nationality = competitor.Nationality, Gender = competitor.Gender, Points = competitor.Points, PreviousPoints = 0 });
+                    DriverList.Add(new Competitor { Name = competitor.Name, Nationality = competitor.Nationality, Team = competitor.Team, Points = competitor.Points });
                 }
 
                 return DriverList;
             }
-        }        
+        }
     }
 }

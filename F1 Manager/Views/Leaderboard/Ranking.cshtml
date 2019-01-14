@@ -1,0 +1,79 @@
+﻿@model F1_Manager.ViewModels.RankingViewModel
+
+@{
+    ViewBag.Title = "Leaderboard";
+}
+
+<h2>Leaderboard</h2>
+<hr />
+<table class="table">
+    <tr>
+        <th>
+            User
+        </th>
+        <th>
+            Points
+        </th>
+    </tr>
+
+    @foreach (var item in Model.UserList)
+    {
+        <tr>
+            <td>
+                @item.Username
+            </td>
+            <td>
+                @item.Points
+            </td>
+        </tr>
+    }
+</table>
+<hr />
+<br />
+
+<h2>Driver Ranking</h2>
+<hr />
+<table class="table">
+    <tr>
+        <th>
+            Driver
+        </th>
+        <th>
+            Nationality
+        </th>
+        <th>
+            Team
+        </th>
+        <th>
+            Points
+        </th>
+    </tr>
+
+    @foreach (var item in Model.DriverList)
+    {
+        <tr>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.Nationality
+            </td>
+            @if (item.Team == null)
+            {
+                <td>
+                    TEAMLESS
+                </td>
+            }
+            else
+            {
+                <td>
+                    @item.Team.Name
+                </td>
+            }
+            <td>
+                @item.Points.ToString()
+            </td>
+        </tr>
+    }
+</table>
+

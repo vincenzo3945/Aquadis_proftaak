@@ -24,7 +24,7 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Matches", "UpcomingMatches", "Match")</li>
                     <li>@Html.ActionLink("Group", "Index", "Group")</li>
-                    <li>@Html.ActionLink("LeaderBoard", "UserRanking", "Leaderboard")</li>
+                    <li>@Html.ActionLink("LeaderBoard", "Ranking", "Leaderboard")</li>
                     @if (Request.IsAuthenticated)
                     {
                         if (Session["UserAdmin"] != null)

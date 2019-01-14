@@ -9,6 +9,8 @@ using F1_Manager.Models;
 using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
 using System.Net.Http;
+using F1_Manager.ViewModels;
+using System.Threading.Tasks;
 
 namespace F1_Manager.Controllers
 {
@@ -16,21 +18,28 @@ namespace F1_Manager.Controllers
     {
         mysqlcon dc = new mysqlcon();
 
-        public ActionResult UserRanking()
+        public async Task<ActionResult> Ranking()
         {
-            List<User> rankingList = new List<User>(); 
+            RankingViewModel rankingModel = new RankingViewModel();
+            DriverController drivercontroller = new DriverController();
+
+
+            List<User> userList = new List<User>();
             string cmd = $"SELECT Username,Points FROM user";
 
             MySqlDataReader reader = dc.ReadSQL(cmd);
 
-            while(reader.Read())
+            while (reader.Read())
             {
-                rankingList.Add(new User { Username = reader["Username"].ToString(), Points = int.Parse(reader["Points"].ToString())});
+                userList.Add(new User { Username = reader["Username"].ToString(), Points = int.Parse(reader["Points"].ToString()) });
             }
 
             dc.CloseConnection();
-            
-            return View(rankingList.ToList());
+
+            rankingModel.UserList = userList;
+            rankingModel.DriverList = await drivercontroller.DriverRanking();
+
+            return View(rankingModel);
         }
     }
 }
