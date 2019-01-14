@@ -16,12 +16,16 @@ namespace F1_Manager.Controllers
         [HttpGet]
         public ActionResult AdminPage()
         {
+
+            if (TempData["Message"] != null)
+            {
+                TempData["Reset"] = TempData["Message"];
+            }
+
             //Get al users for change of user password
             List<string> AllUsers = dc.GetAllUsers();
 
             ResetPasswordViewModel RPVM = new ResetPasswordViewModel();
-            string a = "Corrie";
-            AllUsers.Add(a);
 
             if (AllUsers.Any())
             {

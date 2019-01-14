@@ -41,10 +41,26 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="hidden" name="ItemID" value="@TempData["ItemID"]" />
-                <input type="submit" value="Data" class="btn btn-default" />
+                @*<input type="hidden" name="ItemID" value="@TempData["ItemID"]" />*@
+                <input type="submit" value="Change Password" class="btn btn-default" />
             </div>
         </div>
+
+        @if (TempData["Message"] != null)
+        {
+            <div>
+                Password has bin changed
+            </div>
+        }
+
+        <hr />
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <a href="@Url.Action("RefreshData", "Admin")" class="btn btn-primary">Load race<i class="fa fa-angle-right"></i></a>
+            </div>
+        </div>
+
     </div>
 }
 
