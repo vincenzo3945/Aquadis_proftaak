@@ -18,6 +18,7 @@ namespace F1_Manager.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+
             List<Driver> driverList = new List<Driver>();
 
             string command = $"SELECT * FROM driver";
@@ -79,18 +80,18 @@ namespace F1_Manager.Controllers
         public ActionResult MyTeam()
         {
             UserLogin loggedInUser = (UserLogin)Session["UserLogin"];
-            List<Driver> driverList = new List<Driver>();
+            //List<Driver> driverList = new List<Driver>();
 
-            string getDriverIDs = $"SELECT * FROM driver INNER JOIN userdriver ON driver.DriverID = userdriver.DriverID WHERE userdriver.UserID = '{loggedInUser.UserID}";
-            MySqlDataReader reader = db.ReadSQL(getDriverIDs);
+            //string getDriverIDs = $"SELECT * FROM driver INNER JOIN userdriver ON driver.DriverID = userdriver.DriverID WHERE userdriver.UserID = '{loggedInUser.UserID}";
+            //MySqlDataReader reader = db.ReadSQL(getDriverIDs);
 
-            while (reader.Read())
-            {
-                driverList.Add(new Driver { DriverID = (int)reader["DriverID"], Name = (string)reader["FirstName"], Team = (string)reader["Team"], Cost = (decimal)reader["Cost"], Points = (int)reader["Points"] });            
-            }
+            //while (reader.Read())
+            //{
+            //    driverList.Add(new Driver { DriverID = (int)reader["DriverID"], Name = (string)reader["FirstName"], Team = (string)reader["Team"], Cost = (decimal)reader["Cost"], Points = (int)reader["Points"] });            
+            //}
 
-            db.CloseConnection();
-
+            //db.CloseConnection();
+            List<Driver> driverList = db.getMyTeam(loggedInUser.UserID);
             GameViewModel GVM = new GameViewModel();
             GVM.DriverList = driverList;
 

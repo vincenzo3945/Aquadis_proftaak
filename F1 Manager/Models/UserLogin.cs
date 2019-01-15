@@ -24,6 +24,6 @@ namespace F1_Manager.Models
 
         public int IsAdmin { get; set; }
 
-        public string LoggedinUser;
+        public string LoggedinUser;    //<-- is deze wel nodig?
     }
 }

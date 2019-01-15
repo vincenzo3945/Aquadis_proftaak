@@ -155,7 +155,7 @@ namespace F1_Manager
         public List<string> GetAllUsers()
         {
 
-            int result;
+            //int result;
             List<string> AllUsers = new List<string>();
 
             //string constring = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Vincenzo\Documents\Fontys\Trashure\KillerApp\App_Data\Trashure.mdf; Integrated Security = True; Connect Timeout = 30"; ;
@@ -178,7 +178,7 @@ namespace F1_Manager
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
-                    result = 0;
+                    //result = 0;
                 }
 
                 finally
@@ -189,6 +189,44 @@ namespace F1_Manager
             }
             return AllUsers;
         }
+
+        public List<Driver> getMyTeam(int UserID)
+        {
+            List<Driver> driverList = new List<Driver>();
+
+            using (MySqlCommand cmd = new MySqlCommand("GetMyTeam", connection))
+            {
+                try
+                {
+                    OpenConnectionIfClosed();
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("userid", UserID);
+
+
+                    MySqlDataReader Reader = cmd.ExecuteReader();
+
+                    while (Reader.Read())
+                    {
+                        driverList.Add(new Driver { DriverID = (int)Reader["DriverID"],
+                        Name = (string)Reader["FirstName"],
+                        Team = (string)Reader["Team"],
+                        Cost = (decimal)Reader["Cost"],
+                        Points = (int)Reader["Points"] });
+                    }
+
+                    CloseConnection();
+                    return driverList;
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+
+        }
+
 
         public void mysql(string command)
         {

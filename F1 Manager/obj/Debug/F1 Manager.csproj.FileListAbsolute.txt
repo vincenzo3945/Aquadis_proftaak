@@ -798,3 +798,106 @@ C:\Users\Stefan\Documents\School\S2 Software\Proftaak\Aquadis_proftaak goede\F1 
 C:\Users\Stefan\Documents\School\S2 Software\Proftaak\Aquadis_proftaak goede\F1 Manager\obj\Debug\F1 Manager.csproj.CopyComplete
 C:\Users\Stefan\Documents\School\S2 Software\Proftaak\Aquadis_proftaak goede\F1 Manager\obj\Debug\F1 Manager.dll
 C:\Users\Stefan\Documents\School\S2 Software\Proftaak\Aquadis_proftaak goede\F1 Manager\obj\Debug\F1 Manager.pdb
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\ApplicationInsights.config
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\F1 Manager.dll.config
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\F1 Manager.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\F1 Manager.pdb
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\csc.exe
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\csc.exe.config
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\csc.rsp
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\csi.exe
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\csi.exe.config
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\csi.rsp
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\System.AppContext.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\System.Console.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\System.IO.Compression.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\System.Security.Claims.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\System.ValueTuple.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\vbc.exe
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\vbc.exe.config
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\vbc.rsp
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\VBCSCompiler.exe
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\ADSI.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\Antlr3.Runtime.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\Google.Protobuf.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\Microsoft.AI.Web.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\MySql.Data.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\Newtonsoft.Json.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\System.Net.Http.Formatting.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\System.Web.Helpers.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\System.Web.Http.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\System.Web.Http.WebHost.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\System.Web.Mvc.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\System.Web.Optimization.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\System.Web.Razor.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\System.Web.WebPages.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\System.Web.WebPages.Razor.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\WebGrease.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\ADSI.xml
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\Google.Protobuf.xml
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\MySql.Data.xml
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\Newtonsoft.Json.xml
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\System.Net.Http.Formatting.xml
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\System.Web.Http.xml
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\System.Web.Http.WebHost.xml
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\System.Web.Helpers.xml
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\System.Web.Mvc.xml
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\System.Web.Optimization.xml
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\System.Web.Razor.xml
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\System.Web.WebPages.xml
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\System.Web.WebPages.Razor.xml
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\Antlr3.Runtime.pdb
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\Microsoft.AI.Web.xml
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\obj\Debug\F1 Manager.csprojAssemblyReference.cache
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\obj\Debug\F1 Manager.csproj.CoreCompileInputs.cache
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\obj\Debug\F1 Manager.csproj.CopyComplete
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\obj\Debug\F1 Manager.dll
+C:\Users\Vincenzo\Documents\Fontys\Proftaak\RaceGame\Aquadis\F1 Manager\obj\Debug\F1 Manager.pdb
