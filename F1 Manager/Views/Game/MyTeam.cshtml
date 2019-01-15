@@ -1,0 +1,54 @@
+﻿@model F1_Manager.ViewModels.GameViewModel
+
+@{
+    ViewBag.Title = "MyTeam";
+}
+
+<div class="row">
+    <div style="float: left"> <h2><b> @Html.ActionLink("< Drivers", "Index")</b></h2></div>
+    <div style="float: right"><h2>My Team</h2></div>
+</div>
+<hr />
+
+
+<table class="table">
+    <tr>
+        <th>
+            Driver
+        </th>
+        <th>
+            Team
+        </th>
+        <th>
+            Value
+        </th>
+        <th>
+            Points
+        </th>
+        <th>
+
+        </th>
+    </tr>
+
+    @foreach (var item in Model.DriverList)
+    {
+        <tr>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.Team
+            </td>
+            <td>
+                € @item.Cost
+            </td>
+            <td>
+                @item.Points
+            </td>
+            <td>
+                @Html.ActionLink("Remove", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>

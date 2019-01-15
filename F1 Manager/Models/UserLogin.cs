@@ -8,6 +8,7 @@ namespace F1_Manager.Models
 {
     public class UserLogin
     {
+        public int UserID { get; set; }
         [Display(Name = "Username")]
         [Required(AllowEmptyStrings = false, ErrorMessage = "Username required")]
         public string Username { get; set; }
@@ -18,6 +19,8 @@ namespace F1_Manager.Models
 
         [Display(Name = "Remember Me")]
         public bool RememberMe { get; set; }
+
+        public decimal Balance { get; set; }
 
         public int IsAdmin { get; set; }
 

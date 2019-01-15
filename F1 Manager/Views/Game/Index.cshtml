@@ -1,0 +1,62 @@
+﻿@model F1_Manager.ViewModels.GameViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    <div style="float: left"> <h2>Drivers</h2></div>
+    <div style="float: right"><h2><b> @Html.ActionLink("My Team >", "MyTeam")</b></h2></div>
+</div>
+<hr />
+
+@if (ViewBag.Status != null)
+{
+    if (ViewBag.Status == true)
+    {
+        <div class="alert alert-success">
+            <strong>Success!</strong>@ViewBag.Message
+        </div>
+    }
+    else
+    {    <div class="alert alert-danger">
+            <strong>Error!</strong>@ViewBag.Message
+         </div>
+    }
+}
+
+<table class="table">
+    <tr>
+        <th>
+            Driver
+        </th>
+        <th>
+            Team
+        </th>
+        <th>
+            Cost
+        </th>
+        <th>
+
+        </th>
+    </tr>
+
+    @foreach (var item in Model.DriverList)
+    {
+        <tr>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.Team
+            </td>
+            <td>
+                € @item.Cost
+            </td>
+            <td>
+                @Html.ActionLink("Buy Driver", "BuyDriver", new { driverID = item.DriverID, cost = item.Cost })
+            </td>
+        </tr>
+    }
+
+</table>

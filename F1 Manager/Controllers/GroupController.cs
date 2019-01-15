@@ -14,6 +14,7 @@ namespace F1_Manager.Controllers
     {
         mysqlcon db = new mysqlcon();
 
+        [Authorize]
         public ActionResult Index()
         {
             UserLogin loggedinUser = (UserLogin)(Session["UserLogin"]);

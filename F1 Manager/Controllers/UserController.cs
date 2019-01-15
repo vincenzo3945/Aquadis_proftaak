@@ -7,6 +7,7 @@ using System.Net.Mail;
 using System.Net;
 using System.Web.Security;
 using F1_Manager.Models;
+using MySql.Data.MySqlClient;
 
 namespace F1_Manager.Controllers
 {
@@ -92,12 +93,7 @@ namespace F1_Manager.Controllers
                 {
                     Result = 0;
                 }
-                /*
-                string uNameQuery =  $"SELECT Username FROM user WHERE Username= '{login.Username}'";
-                string pWordQuery =  $"SELECT Password FROM user WHERE Password= '{Crypto.Hash(login.Password)}'";
-
-                string uNameResult = dc.getString(uNameQuery);
-                string pWordResult = dc.getString(pWordQuery);*/
+                
 
                 if (Result == 1)
                 {
@@ -109,8 +105,7 @@ namespace F1_Manager.Controllers
                     cookie.HttpOnly = true;
                     Response.Cookies.Add(cookie);
                     login = null;
-                    Session["UserLogin"] = new UserLogin()
-                    { Username = LoggedInUser.Username };
+                    Session["UserLogin"] = LoggedInUser;
                     Session["UserAdmin"] = LoggedInUser.IsAdmin.ToString();
 
                     if (Url.IsLocalUrl(ReturnUrl))
@@ -170,5 +165,20 @@ namespace F1_Manager.Controllers
             ViewBag.Message = Message;
             return View();
         }
+
+        /*public User GetUserData(string name)
+        {
+            User user = new User();
+
+            string command = $"SELECT id, Balance, IsAdmin FROM user WHERE Username = '{name}'";
+            MySqlDataReader reader = dc.ReadSQL(command);
+
+            while (reader.Read())
+            {
+                user = new User { UserID = (int)reader["id"], Username = name, Balance = (decimal)reader["Balance"], IsAdmin = (bool)reader["IsAdmin"] };
+            }
+
+            return user;
+        } */
     }
 }

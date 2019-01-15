@@ -94,7 +94,9 @@ namespace F1_Manager
 
                     while (Reader.Read())
                     {
+                        LoggedInUser.UserID = (int)Reader["id"];
                         LoggedInUser.Username = (string)Reader["Username"];
+                        LoggedInUser.Balance = (decimal)Reader["Balance"];
                         LoggedInUser.IsAdmin = (int)Reader["IsAdmin"];
                     }
                     Result = 1;

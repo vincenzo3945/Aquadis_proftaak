@@ -6,10 +6,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace F1_Manager.Models
 {
-    
     public partial class User
     {
-        public int UserID { get; set; }
 
         [Display(Name = "Username")]
         [Required(AllowEmptyStrings = false, ErrorMessage = "Username required")]
@@ -24,15 +22,7 @@ namespace F1_Manager.Models
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "Confirm password and password do not match")]
         public string ConfirmPassword { get; set; }
-
-        public int Balance { get; set; } 
-
+        public decimal Balance { get; set; } 
         public int Points { get; set; }
-        public int PreviousPoints { get; set; }
-
-        public override string ToString()
-        {
-            return Username + "," + Points ; 
-        }
     }
 }
