@@ -214,19 +214,93 @@ namespace F1_Manager
                         Cost = (decimal)Reader["Cost"],
                         Points = (int)Reader["Points"] });
                     }
-
-                    CloseConnection();
-                    return driverList;
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-
-                    throw;
+                    Console.WriteLine(ex.Message);
+                }
+                finally
+                {
+                    CloseConnection();
                 }
             }
-
+            return driverList;
         }
 
+        public List<Driver> getRaceResult(int raceID)
+        {
+            List<Driver> driverList = new List<Driver>();
+
+            using (MySqlCommand cmd = new MySqlCommand("GetRaceResult", connection))
+            {
+                try
+                {
+                    OpenConnectionIfClosed();
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("raceID", raceID);
+
+
+                    MySqlDataReader Reader = cmd.ExecuteReader();
+
+                    while (Reader.Read())
+                    {
+                        driverList.Add(new Driver
+                        {
+                            Position = (int)Reader["Position"],
+                            DriverID = (int)Reader["DriverID"],
+                            Name = (string)Reader["FirstName"],
+                            Team = (string)Reader["Team"],
+                            Points = (int)Reader["Points"]
+                        });
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                finally
+                {
+                    CloseConnection();
+                }
+            }
+            return driverList;
+        }
+
+        public List<User> getUsersFromDriver(int driverID)
+        {
+            List<User> userList = new List<User>();
+
+            string command = $"SELECT UserID FROM userdriver WHERE DriverID = '{driverID}'";
+            using (MySqlCommand cmd = new MySqlCommand(command, connection))
+            {
+                try
+                {
+                    OpenConnectionIfClosed();
+                    
+
+
+                    MySqlDataReader Reader = cmd.ExecuteReader();
+
+                    while (Reader.Read())
+                    {
+                        userList.Add(new User
+                        {
+                            UserID = (int)Reader["UserID"]
+                        });
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                finally
+                {
+                    CloseConnection();
+                }
+            }
+            return userList;
+        }
 
         public void mysql(string command)
         {

@@ -312,6 +312,7 @@
     <Content Include="Views\Leaderboard\Ranking.cshtml" />
     <Content Include="Views\Game\Index.cshtml" />
     <Content Include="Views\Game\MyTeam.cshtml" />
+    <Content Include="Views\Game\NextRace.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

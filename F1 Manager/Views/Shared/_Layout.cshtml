@@ -22,7 +22,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Matches", "UpcomingMatches", "Match")</li>
+                    <li>@Html.ActionLink("Game", "Index", "Game")</li>
+                    <li>@Html.ActionLink("Race", "NextRace", "Game")</li>
                     <li>@Html.ActionLink("Group", "Index", "Group")</li>
                     <li>@Html.ActionLink("LeaderBoard", "Ranking", "Leaderboard")</li>
                     @if (Request.IsAuthenticated)

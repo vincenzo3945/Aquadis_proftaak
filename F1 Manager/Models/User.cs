@@ -8,6 +8,7 @@ namespace F1_Manager.Models
 {
     public partial class User
     {
+        public int UserID { get; set; }
 
         [Display(Name = "Username")]
         [Required(AllowEmptyStrings = false, ErrorMessage = "Username required")]

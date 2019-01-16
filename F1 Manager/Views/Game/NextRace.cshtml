@@ -1,0 +1,68 @@
+﻿@model F1_Manager.Models.F1ViewModel
+@using F1_Manager.Models;
+
+@{
+    ViewBag.Title = "NextRace";
+    UserLogin loggedInUser = (UserLogin)Session["UserLogin"];
+}
+
+@if (Model.raceFinished != 1)
+{
+    <div ALIGN="center">
+        <h2>Next Race:</h2>
+        <h2>@Model.FormulaOne.Stage.Stages[20].Description</h2>
+        <h2>@Model.FormulaOne.Stage.Stages[20].ScheduledEnd.DateTime.ToString()</h2>
+
+        @if (loggedInUser.IsAdmin == 1)
+        {
+            @Html.ActionLink("End Race", "EndRace", new { raceID = 1 })
+        }
+     </div>
+}
+else
+{
+    <div ALIGN="center">
+        <h2>@Model.FormulaOne.Stage.Stages[20].Description</h2>
+    </div>
+    <h3>Race Results:</h3>
+
+    <table class="table">
+        <tr>
+            <th>
+                Position
+            </th>
+            <th>
+                Driver
+            </th>
+            <th>
+                Team
+            </th>
+            <th>
+                Points
+            </th>
+
+        </tr>
+
+        @foreach (var item in Model.raceResult)
+        {
+            <tr>
+                <td>
+                    @item.Position
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Team
+                </td>
+                <td>
+                    @item.Points
+                </td>
+            </tr>
+        }
+
+    </table>
+
+}
+
+

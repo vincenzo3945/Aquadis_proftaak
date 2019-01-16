@@ -80,17 +80,7 @@ namespace F1_Manager.Controllers
         public ActionResult MyTeam()
         {
             UserLogin loggedInUser = (UserLogin)Session["UserLogin"];
-            //List<Driver> driverList = new List<Driver>();
-
-            //string getDriverIDs = $"SELECT * FROM driver INNER JOIN userdriver ON driver.DriverID = userdriver.DriverID WHERE userdriver.UserID = '{loggedInUser.UserID}";
-            //MySqlDataReader reader = db.ReadSQL(getDriverIDs);
-
-            //while (reader.Read())
-            //{
-            //    driverList.Add(new Driver { DriverID = (int)reader["DriverID"], Name = (string)reader["FirstName"], Team = (string)reader["Team"], Cost = (decimal)reader["Cost"], Points = (int)reader["Points"] });            
-            //}
-
-            //db.CloseConnection();
+            
             List<Driver> driverList = db.getMyTeam(loggedInUser.UserID);
             GameViewModel GVM = new GameViewModel();
             GVM.DriverList = driverList;
@@ -98,40 +88,71 @@ namespace F1_Manager.Controllers
             return View(GVM);
         }
 
-        [HttpPost]
-        public void AddTeam(string username, string json)
+        [HttpGet]
+        public async Task<ActionResult> NextRace()
         {
-            string St = "Username: ";
-            int pUFrom = St.IndexOf("Username: ") + "Username: ".Length;
-            int pUTo = St.LastIndexOf(",");
+            F1ViewModel model = new F1ViewModel();
+            //F1ViewModel model = FormulaOne
+            //For documentation go to:
+            //https://developer.sportradar.com/docs/read/racing/Formula_1_v2#competitor-profile
 
-            string result = St.Substring(pUFrom, pUTo - pUFrom);
-
-            string getUserID = $"SELECT id FROM user WHERE Username = '{username}'";
-            int userID = db.getID(getUserID);
-
-
-            /*using (HttpClient client = new HttpClient())
+            using (HttpClient client = new HttpClient())
             {
                 HttpResponseMessage response = await client.GetAsync(
                     "http://api.sportradar.us/formula1/trial/v2/en/sport_events/sr:stage:324771/summary.json?api_key=cbrg93g2tbafunheua84ay5h");
-
 
 
                 response.EnsureSuccessStatusCode();
                 var responseBody = await response.Content.ReadAsStringAsync();
 
                 var formulaOne = FormulaOne.FromJson(responseBody);
-
-                foreach (var competitor in formulaOne.Stage.Competitors)
-                {
-                    DriverList.Add(new Competitor { Name = competitor.Name, CountryCode = competitor.CountryCode, Nationality = competitor.Nationality, Gender = competitor.Gender, Points = competitor.Points, PreviousPoints = 0 });
-                }
-
                 
-            }*/
+                model.FormulaOne = formulaOne;
+                                
+            }
+
+            string getIsFinished = $"SELECT IsFinished FROM race WHERE RaceID = '{1}'";
+            model.raceFinished = db.getID(getIsFinished);
+
+            if (model.raceFinished == 1)
+            {
+                int raceID = 1;
+                model.raceResult = db.getRaceResult(raceID);
+            }
+
+            return View(model);
         }
 
+        public ActionResult EndRace(int raceID)
+        {
+            string command = $"UPDATE race SET IsFinished = 1 WHERE RaceID = '{raceID}'";
+            db.mysql(command);
+
+            List<Driver> driverResults = db.getRaceResult(raceID);
+
+            foreach (Driver driver in driverResults)
+            {
+                List<User> usersWithDriver = db.getUsersFromDriver(driver.DriverID);
+
+                if (usersWithDriver != null)
+                {
+                    foreach (User user in usersWithDriver)
+                    {
+                        string getUserPoints = $"SELECT Points FROM user WHERE id = '{user.UserID}'";
+                        int userPoints = db.getID(getUserPoints);
+
+                        userPoints += driver.Points;
+
+                        string updateUserPoints = $"UPDATE user SET Points = '{userPoints}' WHERE id = '{user.UserID}'";
+                        db.mysql(updateUserPoints);
+                    }
+                }
+
+                usersWithDriver.Clear();
+            }
+
+            return RedirectToAction("NextRace");
+        }
         
     }
 }

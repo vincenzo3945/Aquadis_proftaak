@@ -32,7 +32,7 @@ namespace F1_Manager.Controllers
 
                 foreach (var competitor in formulaOne.Stage.Competitors)
                 {
-                    DriverList.Add(new Competitor { Name = competitor.Name, Nationality = competitor.Nationality, Team = competitor.Team, Points = competitor.Points });
+                    DriverList.Add(new Competitor { Name = competitor.Name, Nationality = competitor.Nationality, Team = competitor.Team, Points = competitor.Points, Result = competitor.Result });
                 }
 
                 return DriverList;

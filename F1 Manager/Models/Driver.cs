@@ -7,6 +7,7 @@ namespace F1_Manager.Models
 {
     public class Driver
     {
+        public int Position { get; set; } 
         public int DriverID { get; set; }
         public string Name { get; set; }
         public decimal Cost { get; set; }

@@ -36,6 +36,9 @@
 <table class="table">
     <tr>
         <th>
+            Position
+        </th>
+        <th>
             Driver
         </th>
         <th>
@@ -52,6 +55,9 @@
     @foreach (var item in Model.DriverList)
     {
         <tr>
+            <td>
+                @item.Result.Position
+            </td>
             <td>
                 @item.Name
             </td>
@@ -71,7 +77,7 @@
                 </td>
             }
             <td>
-                @item.Points.ToString()
+                @item.Result.Points
             </td>
         </tr>
     }
