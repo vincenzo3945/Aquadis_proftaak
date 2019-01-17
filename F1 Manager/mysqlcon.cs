@@ -43,7 +43,7 @@ namespace F1_Manager
             connection.Close();
         }
 
-        public int checkRegistration(User TargetUser, double Balance, int IsAdmin)
+        public int checkRegistration(User TargetUser, decimal Balance, int IsAdmin)
         {
 
             int result = 0;
@@ -54,7 +54,7 @@ namespace F1_Manager
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("Uname", TargetUser.Username);
                     cmd.Parameters.AddWithValue("Pword", TargetUser.Password);
-                    cmd.Parameters.AddWithValue("Balance", Balance);
+                    cmd.Parameters.AddWithValue("Blnce", Balance);
                     cmd.Parameters.AddWithValue("Admin", IsAdmin);
 
                     OpenConnectionIfClosed();

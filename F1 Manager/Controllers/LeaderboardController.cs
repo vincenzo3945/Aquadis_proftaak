@@ -39,6 +39,8 @@ namespace F1_Manager.Controllers
             rankingModel.UserList = userList;
             rankingModel.DriverList = await drivercontroller.DriverRanking();
 
+            rankingModel.UserList = rankingModel.UserList.OrderByDescending(P => P.Points).ToList();
+
             return View(rankingModel);
         }
     }

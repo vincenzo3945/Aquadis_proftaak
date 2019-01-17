@@ -29,9 +29,11 @@ namespace F1_Manager.Controllers
                 driverList.Add(new Driver { DriverID = (int)reader["DriverID"], Name = (string)reader["FirstName"], Team = (string)reader["Team"], Cost = (decimal)reader["Cost"] });
             }
             db.CloseConnection();
-
+            
             GameViewModel GVM = new GameViewModel();
             GVM.DriverList = driverList;
+
+            
 
             return View(GVM);
         }
@@ -74,6 +76,21 @@ namespace F1_Manager.Controllers
             ViewBag.Message = message;
 
             return RedirectToAction("Index");
+        }
+
+        public ActionResult RemoveDriver(int driverID, decimal cost)
+        {
+            UserLogin loggedInUser = (UserLogin)Session["UserLogin"];
+
+            string command = $"DELETE FROM userdriver WHERE UserID = '{loggedInUser.UserID}' AND DriverID = '{driverID}'";
+            db.mysql(command);
+
+            loggedInUser.Balance = loggedInUser.Balance + cost;
+
+            string addFunds = $"UPDATE user SET Balance = '{loggedInUser.Balance}' WHERE id = '{loggedInUser.UserID}'";
+            db.mysql(addFunds);
+
+            return RedirectToAction("MyTeam");
         }
 
         [HttpGet]
@@ -119,6 +136,8 @@ namespace F1_Manager.Controllers
                 int raceID = 1;
                 model.raceResult = db.getRaceResult(raceID);
             }
+
+            model.raceResult = model.raceResult.OrderBy(P => P.Position).ToList();
 
             return View(model);
         }

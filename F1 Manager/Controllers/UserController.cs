@@ -43,11 +43,9 @@ namespace F1_Manager.Controllers
 
                 #region Save to Database
 
-                int result = dc.checkRegistration(user, 0, 0);
-
-
-                //string command = $"INSERT into user (Username, Password, Balance, IsAdmin) VALUES ('{user.Username}','{user.Password}','{0.00}','{0}')";
-                //dc.mysql(command);
+                int result = dc.checkRegistration(user, 300000, 0);
+                
+                
                 if (result == 1)
                 {
                     message = "Registration successfull";
@@ -165,20 +163,6 @@ namespace F1_Manager.Controllers
             ViewBag.Message = Message;
             return View();
         }
-
-        /*public User GetUserData(string name)
-        {
-            User user = new User();
-
-            string command = $"SELECT id, Balance, IsAdmin FROM user WHERE Username = '{name}'";
-            MySqlDataReader reader = dc.ReadSQL(command);
-
-            while (reader.Read())
-            {
-                user = new User { UserID = (int)reader["id"], Username = name, Balance = (decimal)reader["Balance"], IsAdmin = (bool)reader["IsAdmin"] };
-            }
-
-            return user;
-        } */
+        
     }
 }
