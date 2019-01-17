@@ -8,6 +8,7 @@ namespace F1_Manager.Models
 {
     public class Group
     {
+        public int GroupID { get; set; }
         public string GroupName { get; set; }
         public List<User> GroupUserList { get; set; }
     }

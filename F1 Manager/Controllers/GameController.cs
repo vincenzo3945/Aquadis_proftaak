@@ -135,9 +135,9 @@ namespace F1_Manager.Controllers
             {
                 int raceID = 1;
                 model.raceResult = db.getRaceResult(raceID);
+                model.raceResult = model.raceResult.OrderBy(P => P.Position).ToList();
             }
 
-            model.raceResult = model.raceResult.OrderBy(P => P.Position).ToList();
 
             return View(model);
         }

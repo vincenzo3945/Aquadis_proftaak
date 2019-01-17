@@ -27,6 +27,12 @@ namespace F1_Manager.Controllers
 
             if (groupID != 0)
             {
+                Group group = new Group();
+                group.GroupID = groupID;
+
+                string getGroupName = $"SELECT groupname FROM groups WHERE id = '{groupID}'";
+                group.GroupName = db.getString(getGroupName);
+
                 string cmd = $"SELECT userID FROM groupuser Where groupID = '{groupID}'";
 
                 TempData["group"] = groupID;
@@ -48,18 +54,16 @@ namespace F1_Manager.Controllers
 
                 foreach(int id in userIDList)
                 {
-                    string getUser = $"SELECT Username FROM user WHERE id = '{id}'";
-                    string username = db.getString(getUser);
+                    string getUser = $"SELECT Username, Points FROM user WHERE id = '{id}'";
+                    MySqlDataReader readuser = db.ReadSQL(getUser);
 
-                    User user = new User
+                    while(readuser.Read())
                     {
-                        Username = db.getString(getUser)
-                    };
+                        groupuserList.Add(new User { Username = (string)readuser["Username"], Points = (int)readuser["Points"] });
+                    }
 
-                    groupuserList.Add(user);
-                }
-
-                Group group = new Group();
+                    db.CloseConnection();
+                }                
 
                 group.GroupUserList = groupuserList;
 
@@ -155,10 +159,9 @@ namespace F1_Manager.Controllers
         {
             bool Status = false;
             string message = "";
-            int groupID = (int)TempData["group"];
+            int groupID = (int)TempData["groupData"];
 
-            /*string getGroupID = $"SELECT id FROM groups WHERE groupName =  '{group.GroupName}'";
-            int groupID = db.getID(getGroupID);*/
+            
             string getUserID = $"SELECT id FROM user WHERE Username =  '{user.Username}'";
             int userID = db.getID(getUserID);
 

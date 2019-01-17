@@ -7,9 +7,10 @@
 
     <link href="@Url.Content("~/css/bootstrap.css")" rel="stylesheet">
     <link href="@Url.Content("~/css/business-casual.css")" rel="stylesheet">
-    @*<script src="~/Scripts/agency.js"></script>*@
+    @using F1_Manager.Models;
 </head>
 <body>
+    
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -46,6 +47,13 @@
                                     <span class="glyphicon glyphicon-log-out"></span>
                                 </a>
                             </li>
+                        }
+
+                        UserLogin loggedInUser = (UserLogin)Session["UserLogin"]; 
+
+                        if (loggedInUser != null)
+                        {
+                            <li>€ @loggedInUser.Balance.ToString()</li>
                         }
                     }
                     else

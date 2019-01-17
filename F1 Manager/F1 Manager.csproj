@@ -283,7 +283,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\User\Registration.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
-    <Content Include="Views\Group\_Index.cshtml" />
+    <Content Include="Views\Group\Index.cshtml" />
     <Content Include="Views\Group\Create.cshtml" />
     <Content Include="Views\Group\AddUser.cshtml" />
     <Content Include="Views\User\PassReset.cshtml" />
@@ -306,7 +306,7 @@
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper.min.js.map" />
-    <Content Include="Views\Group\Index.cshtml" />
+    <Content Include="Views\Group\IndexFout.cshtml" />
     <Content Include="Views\Admin\_AdminPage.cshtml" />
     <Content Include="Views\Admin\AdminPage.cshtml" />
     <Content Include="Views\Leaderboard\Ranking.cshtml" />
